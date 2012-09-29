@@ -16,4 +16,10 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_dependency "decent_exposure", '2.0.0.rc1'
+  gem.add_dependency "formal"
+  gem.add_dependency "haml-rails"
+  gem.add_dependency "rdiscount"
+
 end

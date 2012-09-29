@@ -1,0 +1,11 @@
+= form_for <%= file_name %>, builder: Formal::Builder do |f|
+
+  %dl
+    = f.label :name
+    = f.text_field :name
+
+  %dl
+    = f.label :body
+    = f.text_area :body
+
+  = f.submit
