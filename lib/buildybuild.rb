@@ -1,5 +1,5 @@
 require "buildybuild/version"
-
-module Buildybuild
-  # Your code goes here...
-end
+require 'haml-rails'
+require 'decent_exposure'
+require 'rdiscount'
+require 'formal'
