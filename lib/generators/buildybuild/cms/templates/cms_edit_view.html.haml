@@ -1,0 +1,2 @@
+= form_for <%= file_name %>, url: slug_path(<%= file_name %>.slug), builder: Formal::Builder do |f|
+  = render partial: "form", locals: { f:f }

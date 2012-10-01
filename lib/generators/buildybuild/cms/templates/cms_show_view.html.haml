@@ -1,0 +1,10 @@
+%h1= <%= file_name %>.name.titleize
+
+%nav.actions
+  = link_to "edit", edit_slug_path(<%= file_name %>.slug)
+  |
+  = link_to "delete", slug_path(<%= file_name %>.slug), method: :destroy
+
+%article
+  :markdown
+    #{<%= file_name %>.body}
