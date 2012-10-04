@@ -3,10 +3,11 @@ require 'test_helper'
 class BuildybuildCmsGeneratorTest < Rails::Generators::TestCase
   tests Buildybuild::CmsGenerator
   destination File.expand_path("../../../../tmp", File.dirname(__FILE__))
+  setup :prepare_destination
 
   test "model" do
-    output =  run_generator %w(page)
-    assert output.include? "generate  model page name:string"
+    generator.generate_model
+    assert_file "app/models/page.rb", /class Page/
   end
 
   test "update_model" do

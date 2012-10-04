@@ -6,13 +6,8 @@ module Buildybuild
     argument :model_name, type: :string, default: "page"
 
     def generate_model
-      generate("model #{model_name} name:string slug:string body:text")
+      template("cms_model.rb", "app/models/#{file_name}.rb")
     end
-
-    # def update_generated_model
-    #  after_string = "attr_accessible :body, :name, :slug"
-    #  insert_into_file "app/models/#{file_name}.rb", generated_model, after: after_string
-    # end
 
     def generate_controller
       template("cms_controller.rb", "app/controllers/#{file_names}_controller.rb")
@@ -30,16 +25,6 @@ module Buildybuild
     # end
 
     private
-
-    def generated_model
-  %Q(
-  default_scope order('created_at DESC, updated_at DESC')\n
-  validates_uniqueness_of :name\n
-  before_save :update_slug\n
-  def update_slug
-   self.slug = name.parameterize
-  end\n)
-    end
 
     def generated_routes
   %Q(
