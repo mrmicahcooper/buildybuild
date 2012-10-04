@@ -25,9 +25,9 @@ module Buildybuild
       template("cms_form_partial.html.haml", "app/views/#{file_names}/_form.html.haml")
     end
 
-    # def add_route
-    #   insert_into_file "config/routes.rb", generated_routes, before: /end\n*$/
-    # end
+    def add_routes
+      insert_into_file "config/routes.rb", generated_routes, before: /end\n*$/
+    end
 
     private
 
