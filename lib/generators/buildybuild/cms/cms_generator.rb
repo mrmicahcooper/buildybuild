@@ -9,6 +9,11 @@ module Buildybuild
       template("cms_model.rb", "app/models/#{file_name}.rb")
     end
 
+    def generate_migration
+      time_stamp = Time.now.strftime('%Y%m%d%I%M%S')
+      template("cms_migration.rb", "db/migrate/#{time_stamp}_create_#{file_names}.rb")
+    end
+
     def generate_controller
       template("cms_controller.rb", "app/controllers/#{file_names}_controller.rb")
     end
@@ -48,6 +53,10 @@ module Buildybuild
 
     def klass
       file_name.camelize
+    end
+
+    def klasses
+      file_name.pluralize.camelize
     end
 
     def controller_name
