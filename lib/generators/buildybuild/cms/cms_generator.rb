@@ -9,10 +9,10 @@ module Buildybuild
       generate("model #{model_name} name:string slug:string body:text")
     end
 
-    def update_generated_model
-     after_string = "attr_accessible :body, :name, :slug"
-     insert_into_file "app/models/#{file_name}.rb", generated_model, after: after_string
-    end
+    # def update_generated_model
+    #  after_string = "attr_accessible :body, :name, :slug"
+    #  insert_into_file "app/models/#{file_name}.rb", generated_model, after: after_string
+    # end
 
     def generate_controller
       template("cms_controller.rb", "app/controllers/#{file_names}_controller.rb")
@@ -25,9 +25,9 @@ module Buildybuild
       template("cms_form_partial.html.haml", "app/views/#{file_names}/_form.html.haml")
     end
 
-    def add_route
-      insert_into_file "config/routes.rb", generated_routes, before: /end\n*$/
-    end
+    # def add_route
+    #   insert_into_file "config/routes.rb", generated_routes, before: /end\n*$/
+    # end
 
     private
 

@@ -22,4 +22,6 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "haml-rails"
   gem.add_runtime_dependency "rdiscount"
 
+  # gem.add_development_dependency "rails"
+  gem.add_development_dependency "railties"
 end
