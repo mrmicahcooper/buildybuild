@@ -1,6 +1,6 @@
 class Create<%= klasses %> < ActiveRecord::Migration
   def change
-    create_table :<%= klasses %> do |t|
+    create_table :<%= table_name %> do |t|
       t.string :name
       t.string :slug
       t.text :body

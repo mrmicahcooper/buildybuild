@@ -12,7 +12,7 @@ class BuildybuildCmsGeneratorTest < Rails::Generators::TestCase
 
   test "migration is generated" do
     generator.generate_migration
-    assert_migration "db/migrate/create_pages.rb"
+    assert_migration "db/migrate/create_pages.rb", /create_table :pages/
   end
 
   test "controller is generated" do

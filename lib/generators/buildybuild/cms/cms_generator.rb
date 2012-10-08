@@ -59,6 +59,10 @@ module Buildybuild
       file_name.pluralize.camelize
     end
 
+    def table_name
+      klasses.downcase
+    end
+
     def controller_name
       "#{file_name.pluralize}Controller".camelize
     end
