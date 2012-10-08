@@ -1,4 +1,5 @@
-require "buildybuild/version"
+require 'rails/generators'
+require 'buildybuild/version'
 require 'haml-rails'
 require 'decent_exposure'
 require 'rdiscount'
