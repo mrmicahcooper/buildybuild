@@ -23,4 +23,5 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "rdiscount"
 
   gem.add_development_dependency "railties"
+  gem.add_development_dependency "pry"
 end
