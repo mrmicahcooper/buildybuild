@@ -1,8 +1,8 @@
-class <%= klass %>
+class <%= klass %> < ActiveRecord::Base
 
   attr_accessible :body, :name, :slug
 
-  default_scope order('created_at DESC, updated_at DESC')\n
+  default_scope order('created_at DESC, updated_at DESC')
 
   validates_uniqueness_of :name
 

@@ -26,7 +26,7 @@ module Buildybuild
     end
 
     def add_routes
-      insert_into_file "config/routes.rb", generated_routes, before: /end\n*$/
+      insert_into_file "config/routes.rb", generated_routes, before: /^end\n*$/
     end
 
     private
@@ -41,7 +41,6 @@ module Buildybuild
   put "/:slug", to: "pages#update", as: :slug
   post "/:slug", to: "pages#destroy", as: :slug\n)
     end
-
 
     def file_name
       model_name.underscore
@@ -61,6 +60,10 @@ module Buildybuild
 
     def table_name
       klasses.downcase
+    end
+
+    def table_names
+      klasses.pluralize.underscore
     end
 
     def controller_name

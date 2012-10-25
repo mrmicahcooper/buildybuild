@@ -30,7 +30,7 @@ class BuildybuildCmsGeneratorTest < Rails::Generators::TestCase
 
   test "routes are updated" do
     #create the file in the test so we can insert into it.
-    generator.create_file("config/routes.rb", "class Routes \n\n end")
+    generator.create_file("config/routes.rb", "class Routes \n\nend")
     generator.add_routes
     assert_file "config/routes.rb", /get "\/:slug", to: "pages#show", as: :slug/
   end
