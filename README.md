@@ -25,10 +25,11 @@ Or install it yourself as:
 $ gem install buildybuild
 ```
 
-**Note:** There are runtime dependencies in Buildybuild so you'll have to add the following if buildybuild is not in your Gemfile:
+**Note:** There are runtime dependencies in Buildybuild so you'll have to add
+the following if buildybuild is not in your Gemfile:
 
 ```ruby
-gem 'decent_exposure', '2.0.0.rc1'
+gem 'decent_exposure'
 gem 'haml-rails'
 gem 'formal'
 gem 'rdiscount'
@@ -39,13 +40,12 @@ gem 'rdiscount'
 ## For static pages (the CMS)
 
 ```bash
-$ rails generate buildybuild:cms 
+$ rails generate buildybuild:cms
 
 # you can pass a name for the generated resource. Default is "page" i.e.:
 
 $ rails generate buildybuild:cms static_page
 ```
-
 
 This will create the following files:
 
@@ -74,12 +74,14 @@ post "/:slug", to: "pages#destroy", as: :slug
 run the migration
 
 ```bash
-rake db:migrate
+$ rake db:migrate
 ```
 
-And you're set. Now you can go to ```http://localhost:3000/pages/new``` and see your new Content Management System in action!
+And you're set. Now you can go to ```http://localhost:3000/pages/new``` and see
+your new Content Management System in action!
 
-Or you can create static pages and stick them in ```app/views/pages/```. Then you will automatically have access to the page in your routes.
+Or you can create static pages and stick them in ```app/views/pages/```. Then
+you will automatically have access to the page in your routes.
 
 Observe:
 
@@ -87,10 +89,24 @@ Create a static page called ```app/views/pages/about_us.html.haml```
 
 Then automatically have access to ```http://localhost:3000/about-us```.
 
+Notice the difference between the underscore "_" in the file name and the dash
+"-" in the url.
+
 ## For the active link helper
+This is so you can replace your ```link_to``` helper with ```active_link_to```
+which will add a class of "active" to the link when you're on that page. i.e:
+
+```ruby
+= active_link_to "/about-us", "About"
+```
+returns the following when the current page is ```/about-us"
+```html
+<a class="active" href="/about-us">About</a>
+```
+### Run
 
 ```bash
-rails g buildybuild:active_link
+$ rails g buildybuild:active_link
 ```
 
 This appends the following to the bottom of your ApplicationHelper:
@@ -104,9 +120,9 @@ def active_link_to(text, path, options={})
 end
 ```
 
-It's small but cool!
+It's kinda small. But cool!
 
-      
+
 ## Contributing
 
 1. Fork it
