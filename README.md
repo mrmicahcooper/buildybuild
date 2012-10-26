@@ -99,7 +99,7 @@ which will add a class of "active" to the link when you're on that page. i.e:
 ```ruby
 = active_link_to "/about-us", "About"
 ```
-returns the following when the current page is ```/about-us"
+returns the following when the current page is ```/about-us```"
 ```html
 <a class="active" href="/about-us">About</a>
 ```
