@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_runtime_dependency "formal"
-  gem.add_runtime_dependency "decent_exposure", "2.0.0.rc1"
+  gem.add_runtime_dependency "decent_exposure"
   gem.add_runtime_dependency "haml-rails"
   gem.add_runtime_dependency "rdiscount"
 
